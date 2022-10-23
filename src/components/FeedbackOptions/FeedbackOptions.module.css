@@ -1,0 +1,92 @@
+.btnList {
+  display: flex;
+  justify-content: space-between;
+}
+.btnItem {
+  position: relative;
+}
+.btn {
+  border: none;
+  background-color: transparent;
+  color: rgb(243, 230, 230);
+  padding: 15px 32px;
+  text-align: center;
+  text-transform: capitalize;
+  display: inline-block;
+  font-size: 16px;
+  width: 140px;
+  cursor: pointer;
+  border-radius: 12px;
+  height: 50px;
+}
+
+.btnItem:first-child:hover {
+  border: 2px solid rgb(144, 238, 144);
+  margin: -2px;
+  border-radius: 20px;
+}
+
+.btnItem:nth-child(2):hover {
+  border: 2px solid #f1b211;
+  margin: -2px;
+  border-radius: 20px;
+}
+
+.btnItem:nth-child(3):hover {
+  border: 2px solid rgb(247, 51, 77);
+  margin: -2px;
+  border-radius: 20px;
+}
+
+.btnIconGood {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  color: rgb(144, 238, 144);
+}
+
+.btnIconNeutral {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  color: #f1b211;
+}
+
+.btnIconBad {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  color: rgb(247, 51, 77);
+}
+
+.btnItem:hover {
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
