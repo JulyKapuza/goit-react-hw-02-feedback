@@ -12,7 +12,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
         <button
           type="button"
           className={css.btn}
-          onClick={() => onLeaveFeedback.handleGood()}
+          onClick={() => onLeaveFeedback(options[0])}
         >
           {options[0]}
         </button>
@@ -22,7 +22,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
         <button
           type="button"
           className={css.btn}
-          onClick={() => onLeaveFeedback.handleNeutral()}
+          onClick={() => onLeaveFeedback(options[1])}
         >
           {options[1]}
         </button>
@@ -32,18 +32,31 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
         <button
           type="button"
           className={css.btn}
-          onClick={() => onLeaveFeedback.handleBad()}
+          onClick={() => onLeaveFeedback(options[2])}
         >
           {options[2]}
         </button>
       </li>
+
+      {/* БЕЗ ІКОНОК */}
+      {/* {options.map((option,i)=>{return (
+        <li key={i} className={css.btnItem}>
+          {option}
+           <button
+          type="button"
+          className={css.btn}
+          onClick={() => onLeaveFeedback.handleChange(options[i])}
+        ></button>
+        </li>
+      );}) } */}
+      {/* БЕЗ ІКОНОК */}
     </ul>
   );
 };
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onLeaveFeedback: PropTypes.object.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;
